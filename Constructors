@@ -1,0 +1,82 @@
+public class Bank {
+
+
+    private int acc_no;
+    private int balance;
+    private String Cus_name;
+    private String Email;
+    private String phone;
+    public Bank(int acc, int bal, String nam, String em, String ph)
+    {
+        this.acc_no=acc;
+        this.balance=bal;
+        this.Cus_name= nam;
+        this.Email=em;
+        this.phone=ph;
+        System.out.println("account number= "+acc_no);
+        System.out.println("Total balance= "+balance);
+        System.out.println("CUSTOMER NAME= "+Cus_name);
+        System.out.println("Email= "+Email);
+        System.out.println("phone number= "+phone);
+    }
+    public void deposit(double amt){
+        System.out.println("Before  deposit= "+balance);
+        this.balance+= amt;
+        System.out.println("after deposit= "+ balance);
+    }
+    public void withdraw(double withamt)
+    {
+        System.out.println("total withdrawl= "+ withamt);
+        this.balance-=withamt;
+        System.out.println("after withdraw= "+ balance);
+    }
+
+    public int getAcc_no() {
+        return acc_no;
+    }
+
+    public void setAcc_no(int acc_no) {
+        this.acc_no = acc_no;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public String getCus_name() {
+        return Cus_name;
+    }
+
+    public void setCus_name(String cus_name) {
+        Cus_name = cus_name;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+}
+public class main {
+    public static void main(String[] args) {
+        Bank ob= new Bank(119905, 566455, "Ayush Verma", "ayushx16@gmail.com", "8318376348");
+        ob.withdraw(100);
+        ob.deposit(10000);
+        ob.deposit(20001);
+    }
+}
+
