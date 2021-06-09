@@ -1,0 +1,75 @@
+public class Animal {
+
+    private String Name;
+    private int legs;
+    private int brain;
+
+    public Animal(String name,int legs,int brain)
+    {
+        this.Name=name;
+        this.legs=legs;
+        this.brain=brain;
+    }
+    public void eat()
+    {
+        System.out.println("Animal.eat is caled");
+    }
+    public void Sleep()
+    {
+        System.out.println("Animal.Sleep is called");
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public int getLegs() {
+        return legs;
+    }
+
+    public int getBrain() {
+        return brain;
+    }
+}
+
+
+public class Cat extends Animal{
+
+    private int tail;
+    private String fur;
+    public Cat(String name,int tail,String fur) {
+        super(name, 1, 1);
+        this.tail=tail;
+        this.fur=fur;
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Cat eat");
+        super.eat();
+
+    }
+
+    @Override
+    public void Sleep() {
+        System.out.println("Cat Sleep");
+        super.Sleep();
+    }
+}
+
+
+public class main {
+    public static void main(String[] args) {
+        Animal sc=new Animal("Animals",1,1);
+
+        Cat ob=new Cat("persian",1,"long");
+        ob.eat();
+        ob.Sleep();
+
+
+    }
+}
+
+
+
+
