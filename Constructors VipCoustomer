@@ -1,0 +1,51 @@
+public class VipCustomer {
+    private String Name;
+    private int Credit_limit;
+    private String Email_address;
+
+
+    public VipCustomer() {
+        this("Default name",5000,"unknwon@gmail.com");
+    }
+
+    public VipCustomer(String name, int credit_limit) {
+        this(name,credit_limit,"unknown@gmail.com");
+
+    }
+
+    public VipCustomer(String name, int credit_limit, String email_address) {
+        this.Name = name;
+        this.Credit_limit = credit_limit;
+        this.Email_address = email_address;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public int getCredit_limit() {
+        return Credit_limit;
+    }
+
+    public String getEmail_address() {
+        return Email_address;
+    }
+}
+
+public class main {
+    public static void main(String[] args) {
+        VipCustomer ob1= new VipCustomer();
+        System.out.println(ob1.getName());
+
+        VipCustomer ob2= new VipCustomer("Ayush",25000);
+        System.out.println(ob2.getName());
+
+        VipCustomer ob3= new VipCustomer("Incarnation",30000,"ayushx16@gmail.com");
+        System.out.println("\n\n"+ob3.getName());
+        System.out.println(ob3.getCredit_limit());
+        System.out.println(ob3.getEmail_address());
+    }
+
+}
+
+
