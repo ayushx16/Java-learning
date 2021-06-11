@@ -1,0 +1,100 @@
+public class Vehicle {
+    private int wheels;
+    private int door;
+    private String type;
+    private String fuel_type;
+
+    public Vehicle(int wheels, int door, String type,String ftype) {
+        this.wheels = wheels;
+        this.door = door;
+        this.type = type;
+        this.fuel_type=ftype;
+    }
+    public void Vehicals()
+    {
+        System.out.println("vehical.vh is called ");
+        System.out.println(wheels);
+        System.out.println(door);
+        System.out.println(type);
+        System.out.println(fuel_type);
+    }
+
+    public int getWheels() {
+        return wheels;
+    }
+
+    public int getDoor() {
+        return door;
+    }
+
+    public String getType() {
+        return type;
+    }
+    public String getFuel_type(){
+        return fuel_type;
+    }
+}
+
+public class car extends Vehicle {
+    private int Sylinder;
+    private int no_of_Seats;
+
+
+
+    public car(int door, String type,String ftype,int Sylinder,int seats) {
+        super(4, door, type,ftype);
+        this.no_of_Seats=seats;
+        this.Sylinder=Sylinder;
+
+    }
+
+    @Override
+    public void Vehicals() {
+        System.out.println("car.ch is called");
+        System.out.println(no_of_Seats);
+        System.out.println(Sylinder);
+        super.Vehicals();
+    }
+
+    public int getSylinder() {
+        return Sylinder;
+    }
+
+    public int getNo_of_Seats() {
+        return no_of_Seats;
+    }
+}
+
+public class Sports extends car{
+    private String Name;
+    public Sports(int door, String type, String ftype, int Sylinder, int seats,String nm) {
+        super(door, type, ftype, Sylinder, seats);
+        this.Name=nm;
+    }
+
+    @Override
+    public void Vehicals() {
+        System.out.println("sports.vh is called");
+        System.out.println(Name);
+        super.Vehicals();
+    }
+
+    public String getName() {
+        return Name;
+    }
+}
+
+public class main {
+    public static void main(String[] args) {
+
+
+        Vehicle vh = new Vehicle(4, 4, "Sydan", "Petrol");
+
+        car cr = new car(4, "dacia", "petrol", 4, 4);
+
+        Sports sp = new Sports(2, "sports", "jet fuel", 8, 2, "lamborgini");
+        sp.Vehicals();
+    }
+
+}
+
