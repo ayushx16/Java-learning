@@ -1,0 +1,137 @@
+class Movie
+{
+    private String name;
+
+    public Movie(String name) {
+        this.name = name;
+    }
+    public String plot() {
+    return "No plot Here";
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+class xxx extends Movie
+{
+    public xxx() {
+        super("XXX");
+    }
+
+    public String plot() {
+        return "Fight";
+    }
+
+}
+class Naruto extends Movie
+{
+    public Naruto() {
+        super("Naruto");
+    }
+
+    public String plot() {
+        return "Ninjas";
+    }
+}
+class DemonSlayer extends Movie
+{
+    public DemonSlayer() {
+        super("DemonSlayer");
+    }
+
+    public String plot(){
+        return "Demons";
+
+}
+}
+class BlackClover extends Movie
+{
+    public BlackClover() {
+        super("BlackClover");
+    }
+
+    public String plot() {
+        return "Devil binding ritual";
+    }
+
+}
+class tokyoGhoul extends Movie
+{
+    public tokyoGhoul() {
+        super("tokyoGhoul");
+    }
+
+    public String plot() {
+        return "Fighting the ghouls";
+    }
+}
+class Tokyo_Revengers extends Movie
+{
+    public Tokyo_Revengers()
+    {
+        super("Tokyo_Revengers");
+    }
+
+    public String plot() {
+        return "Mob";
+    }
+}
+class Slime extends Movie{
+        public Slime() {
+            super("Slime");
+        }
+
+        public String plot() {
+            return "Reincarnation";
+        }
+}
+
+
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 11; i++) {
+            Movie movie = randomMovie();
+            System.out.println("Movie #" + i +
+                    ":" + movie.getName() + "\n" +
+                    "Plot " + movie.plot() + "\n");
+
+        }
+    }
+
+    public static Movie randomMovie() {
+        int randomNumber = (int)(Math.random() * 8) + 1;
+        System.out.println("Random Number Generated was " + randomNumber);
+        switch (randomNumber) {
+            case 1:
+                return new xxx();
+
+            case 2:
+                return new Naruto();
+
+            case 3:
+                return new DemonSlayer();
+
+            case 4:
+                return new BlackClover();
+
+            case 6:
+                return new tokyoGhoul();
+
+            case 7:
+                return new Tokyo_Revengers();
+
+            case 8:
+                return new Slime();
+
+
+
+
+        }
+        return null;
+    }
+}
