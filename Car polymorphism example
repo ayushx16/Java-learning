@@ -1,0 +1,42 @@
+class Car
+{
+    private Boolean Engline;
+    private int Cylinders;
+    private String Name;
+    private int wheels;
+
+    public Car(int cylinders, String Name) {
+        this.Engline = true;
+        Cylinders = cylinders;
+        this.wheels = 4;
+        this.Name = Name;
+    }
+
+    public int getCylinders() {
+        return Cylinders;
+    }
+     public String startEngline(){
+        return "Car Starting";
+     }
+}
+class Mustang extends Car{
+    public Mustang(int cylinders, String Name) {
+        super(cylinders, Name);
+    }
+
+    @Override
+    public String startEngline() {
+        return "Mustang startEnginn";
+    }
+}
+
+
+
+public class main {
+    public static void main(String[] args) {
+        Car car=new Car(45,"Base car");
+        System.out.println(car.startEngline());
+        Mustang mustang=new Mustang(8,"Mustang");
+        System.out.println(mustang.startEngline());
+    }
+}
