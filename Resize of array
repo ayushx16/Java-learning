@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Main {
+    private static Scanner sc=new Scanner(System.in);
+    private static int[] array1=new int[10];
+    public static void main(String[] args) {
+        System.out.println("enter 10 integers");
+        getarray();
+        printArray(array1);
+        resize();
+        System.out.println("Enter 15 integers");
+        getarray();
+        printArray(array1);
+
+    }
+    public static void getarray(){
+        System.out.println("Enter elements in array");
+        for(int i=0;i<array1.length;i++){
+            array1[i]=sc.nextInt();
+        }
+    }
+    public static void printArray(int[] arr){
+        for(int i=0;i<arr.length;i++){
+            System.out.println(" elements in array are : "+ arr[i]);
+        }
+    }
+    public static void resize() {
+        int[] array2 = array1;
+        array1 = new int[15];
+        for (int i = 0; i < array1.length; i++) {
+            array1[i] = array2[i];
+        }
+    }
+}
