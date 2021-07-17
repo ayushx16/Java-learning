@@ -1,0 +1,76 @@
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class Traveling {
+    public static void main(String[] args) {
+        LinkedList<String> placeToVisit=new LinkedList<String>();
+        //placeToVisit.add("Jammu");
+        //placeToVisit.add("Kashmir");
+        //placeToVisit.add("Jalandhar");
+        //placeToVisit.add("Chnadigarh");
+        //placeToVisit.add("Bareily");
+        //placeToVisit.add("Delhi");
+        //placeToVisit.add("Banglore");
+        //printVisited(placeToVisit);
+        //placeToVisit.add(6,"Lucknow");
+        //printVisited(placeToVisit);
+
+        //placeToVisit.remove(5);
+        //printVisited(placeToVisit);
+        newVisit(placeToVisit,"Jammu");
+        newVisit(placeToVisit,"Kashmir");
+        newVisit(placeToVisit,"Jalandhar");
+        newVisit(placeToVisit,"Chandigarh");
+        newVisit(placeToVisit,"Bareily");
+        newVisit(placeToVisit,"Delhi");
+        newVisit(placeToVisit,"Banglore");
+        newVisit(placeToVisit,"Lucknow");
+
+
+        printVisited(placeToVisit);
+        newVisit(placeToVisit,"Lakhimpur");
+        newVisit(placeToVisit,"Utrakhand");
+        printVisited(placeToVisit);
+
+        placeToVisit.remove(5);
+
+        printVisited(placeToVisit);
+
+
+
+    }
+    private static void printVisited(LinkedList<String> linkedList){
+        Iterator<String> i= linkedList.iterator();
+        while(i.hasNext())
+        {
+            System.out.println("Places to visit "+i.next());
+        }
+        System.out.println("=======================================");
+    }
+    private static boolean newVisit(LinkedList<String> linkedList,String newCity){
+        ListIterator<String> newCityVisit = linkedList.listIterator();
+        while(newCityVisit.hasNext()){
+            int compare=newCityVisit.next().compareTo(newCity);
+            if(compare == 0)
+            {
+                System.out.println("City already included");
+                return false;
+            }
+            else if(compare > 0){
+                newCityVisit.previous();
+                newCityVisit.add(newCity);
+                return true;
+            }
+            else if(compare < 0){
+            }
+
+        }
+        newCityVisit.add(newCity);
+        return true;
+    }
+
+
+
+
+}
